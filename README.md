@@ -1,5 +1,6 @@
 # ScoalaPrivata
 Am schimbat tema proiectului putin, deoarece tot ce am facut inainte era gresit :(
+
 Tipuri de obiecte :
 1 Persoana ( clasa abstracta care defineste persoanele ca si obiecte cu diferite functii pe care le mostenesc)
 2 Profesor ( relatie IS-A cu Persoana )
