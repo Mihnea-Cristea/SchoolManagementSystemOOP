@@ -1,10 +1,7 @@
 package Persoane;
 
-import Materii.Matematica;
-import Materii.Romana;
-import Service.Serviciu;
 
-public abstract class Persoana implements Serviciu {
+public abstract class Persoana {
     String nume;
     int varsta;
     Persoana(String nume,int varsta)
@@ -29,6 +26,6 @@ public abstract class Persoana implements Serviciu {
         this.varsta = varsta;
     }
 
-    abstract public void Afisare();
-    abstract public void Ascultare();
+    abstract public void afisare();
+    abstract public void ascultare();
 }

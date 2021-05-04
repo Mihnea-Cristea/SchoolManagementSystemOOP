@@ -1,6 +1,5 @@
 package Materii;
 
-import Persoane.Elev;
 import Persoane.Profesor;
 
 public class Romana extends Materie{
@@ -10,6 +9,8 @@ public class Romana extends Materie{
         super(profesor);
         this.fiseDeLectura=fiseDeLectura;
     }
+    public Romana ()
+    {}
 
     public String getFiseDeLectura() {
         return fiseDeLectura;
@@ -20,7 +21,7 @@ public class Romana extends Materie{
     }
 
     @Override
-    public void Afisare() {
+    public void afisare() {
         System.out.println(" Ora de romana este sustinuta de profesorul "+this.profesor.getNume()+" care a cerut urmatoarele fise de lectura: "+this.fiseDeLectura);
         System.out.println("Media clasei este: "+this.getMedie());
     }

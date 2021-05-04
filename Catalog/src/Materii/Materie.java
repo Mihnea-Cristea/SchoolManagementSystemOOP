@@ -1,14 +1,11 @@
 package Materii;
 
-import Persoane.*;
-import Service.Serviciu;
+import Persoane.Profesor;
 
 import java.text.DecimalFormat;
 import java.util.Random;
 
-import static java.text.ChoiceFormat.nextDouble;
-
-public abstract class Materie implements Serviciu {
+public abstract class Materie  {
 
     Profesor profesor;
     String medie;
@@ -21,6 +18,8 @@ public abstract class Materie implements Serviciu {
         this.medie = douaZecimale.format(rand.nextInt(5)+5 +rand.nextDouble());
 
     }
+    Materie()
+    {}
 
 
     public String getMedie() {
@@ -39,15 +38,8 @@ public abstract class Materie implements Serviciu {
         this.profesor = profesor;
     }
 
-    public abstract void Afisare();
+    public abstract void afisare();
 
-    public int testSurpriza(int severitateProf) {
-            int notaElev;
-            notaElev = rand.nextInt(10) + 1;
-            if (notaElev < 5 && severitateProf <= 2)
-                notaElev = 5; /// Daca profesorul e indulgent, elevul va fi trecut in cazul in care pica testul
-            if (severitateProf > 5) notaElev--;
-            return notaElev;
-        }
+
 
 }

@@ -1,10 +1,7 @@
 package Persoane;
 import Materii.Matematica;
-import Materii.Materie;
 import Materii.Romana;
-import Service.Serviciu;
-
-import java.util.*;
+import Service.Servisiu;
 
 public class Elev extends Persoana implements Comparable<Elev> {
     private int clasa;
@@ -33,13 +30,13 @@ public class Elev extends Persoana implements Comparable<Elev> {
     }
 
     @Override
-    public void Ascultare() {
+    public void ascultare() {
         System.out.println(this.nume+" este la ascultare la scoala.");
     }
 
     @Override
-    public void Afisare() {
-        System.out.println(this.nume+" este Elev cu varsta de "+this.varsta+" ani, in clasa "+ this.clasa+this.literaClasa);
+    public void afisare() {
+        System.out.println(this.nume+" este elev cu varsta de "+this.varsta+" ani, in clasa "+ this.clasa+this.literaClasa);
     }
 
 
@@ -52,13 +49,13 @@ public class Elev extends Persoana implements Comparable<Elev> {
         return nume.compareTo(comparat); // in ordine alfabetica
     }
 
-    @Override
-    public void simulare(Elev elevi, Diriginte diriginte, Romana romana, Matematica mate)
+    public void simulare(Elev elevi, Romana romana, Matematica mate)
     {
         if(elevi.getClasa()==12)
         {
-            double notaRomana=romana.testSurpriza(diriginte.getSeveritate());
-            double notaMate=mate.testSurpriza(diriginte.getSeveritate());
+
+            double notaRomana= (double) Servisiu.test(8);
+            double notaMate=(double) Servisiu.test(8);
             double medieSimulare=notaMate+notaRomana/2;
             System.out.println("Elevul "+elevi.getNume()+" a obtinut :");
             System.out.println("Romana = "+ notaRomana+" ; Matematica = "+notaMate+" ;"+" Situatie: "+ (medieSimulare>5 ? "Admis" : "Picat"));

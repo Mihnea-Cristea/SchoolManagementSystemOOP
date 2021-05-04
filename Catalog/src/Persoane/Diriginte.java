@@ -27,19 +27,19 @@ public class Diriginte extends Profesor{
     }
 
     @Override
-    public void Afisare() {
+    public void afisare() {
         System.out.println("Profesorul "+ this.nume+ " este dirigintele clasei "+this.clasa+this.literaClasa);
     }
 
     @Override
-    public void Ascultare() {
-        super.Ascultare();
+    public void ascultare() {
+        super.ascultare();
     }
 
-    @Override
-    public void sedintaCuParintii()
+
+    public void sedinta(int numar, char litera)
     {
-        if(this.varsta>60) System.out.println("Dirigintele clasei "+this.clasa+this.literaClasa+" va organiza o sedinta cu parintii din cauza ca e nebun");
+        if(this.varsta>55) System.out.println("Dirigintele clasei "+numar+litera+" va organiza o sedinta cu parintii din cauza ca e nebun");
         else System.out.println("Nu o sa aiba loc sedinta cu parintii, deoarece dirigintele este in relatii bune cu elevii sai.");
     }
 }

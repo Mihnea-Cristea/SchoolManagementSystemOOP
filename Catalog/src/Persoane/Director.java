@@ -1,10 +1,10 @@
 package Persoane;
 
 public final class Director {   ///Clasa de tip singleton
-     static String nume;
-     static Director director;
+     private static String nume;
+     private static Director director;
 
-    public Director() {
+    private Director() {
         nume = " Sava Catalin ";
     }
 
@@ -13,7 +13,7 @@ public final class Director {   ///Clasa de tip singleton
         return director;
     }
 
-    public static void AfisareDirector()
+    public static void afisareDirector()
     {
         System.out.println(nume+" este directorul scolii.");
     }
