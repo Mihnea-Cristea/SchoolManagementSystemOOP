@@ -11,7 +11,9 @@ public class Servisiu {
     public static int test(int severitateProf) {
         Random rand = new Random();
         int notaElev;
-        notaElev = (rand.nextInt(10) + 4) %10;
+        notaElev = (rand.nextInt(10) +1);
+        if (notaElev<=1) notaElev = 2;
+        if (notaElev>10) notaElev = 10;
         if (notaElev < 5 && severitateProf <= 2)
             notaElev = 5; /// Daca profesorul e indulgent, elevul va fi trecut in cazul in care pica testul
         if (severitateProf > 5) notaElev--;

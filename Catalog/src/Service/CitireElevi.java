@@ -1,4 +1,5 @@
 package Service;
+
 import Persoane.Elev;
 
 import java.io.File;
@@ -16,15 +17,15 @@ public class CitireElevi {
     }
 
     public void citire(String path, Elev[] elevi, int n) {
+        File file = new File(path);
         try {
-            Scanner in = new Scanner(new File("C:\\Users\\Baciu\\Desktop\\Facultate\\Sem2\\Java\\ScoalaPrivata\\Catalog\\src\\Fisiere\\Elevi.csv"));
+            Scanner in = new Scanner(file);
             String linie;
-            in.nextLine();
             for (int i = 0;i<n;i++)
             {
                 linie=in.nextLine();
                 String[] splitter = linie.split(", ");
-                elevi[i]= new Elev(splitter[0],Integer.parseInt(splitter[1]),Integer.parseInt(splitter[2]), (char) Character.toUpperCase(Integer.parseInt(splitter[4])));
+                elevi[i]= new Elev(splitter[0], Integer.parseInt(splitter[1]), Integer.parseInt(splitter[2]), splitter[3].charAt(0));
             }
         } catch (FileNotFoundException e){
             e.printStackTrace();

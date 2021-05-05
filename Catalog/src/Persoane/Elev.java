@@ -56,9 +56,9 @@ public class Elev extends Persoana implements Comparable<Elev> {
 
             double notaRomana= (double) Servisiu.test(8);
             double notaMate=(double) Servisiu.test(8);
-            double medieSimulare=notaMate+notaRomana/2;
+            double medieSimulare=(notaMate+notaRomana)/2;
             System.out.println("Elevul "+elevi.getNume()+" a obtinut :");
-            System.out.println("Romana = "+ notaRomana+" ; Matematica = "+notaMate+" ;"+" Situatie: "+ (medieSimulare>5 ? "Admis" : "Picat"));
+            System.out.println("Romana = "+ notaRomana+" ; Matematica = "+notaMate+" ;"+" Situatie: "+ (medieSimulare>=5 ? "Admis" : "Picat"));
         }
     }
 }

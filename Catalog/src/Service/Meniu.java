@@ -34,6 +34,10 @@ public class Meniu implements Audit{
         int comanda = scanner.nextInt();
         Servisiu servisiu = new Servisiu();
         Random indexRand = new Random();
+        while (comanda>=10){
+            System.out.println("Alegeti o optiune valida.");
+            comanda = scanner.nextInt();
+        }
        do {
 
             switch (comanda) {
@@ -42,18 +46,20 @@ public class Meniu implements Audit{
 
 
                     System.out.println();
-                    for (int i = 1; i < elevi.length; i++)
+                    for (int i = 0; i < elevi.length; i++)
                         elevi[i].afisare();
                     System.out.println();
+                    break;
                 }
                 case 2: {
                     audit("Lista profesorilor scolii");
 
 
                     System.out.println();
-                    for (int i = 1; i < profesori.length; i++)
+                    for (int i = 0; i < profesori.length; i++)
                         profesori[i].afisare();
                     System.out.println();
+                    break;
                 }
                 case 3: {
                     audit("Afisare directorul scolii");
@@ -63,6 +69,7 @@ public class Meniu implements Audit{
                     Director.getDirector();
                     Director.afisareDirector();
                     System.out.println();
+                    break;
                 }
                 case 4: {
                     audit("Afisare elevi in ordine alfabetica");
@@ -75,6 +82,7 @@ public class Meniu implements Audit{
                         elevi[i].afisare();
                         System.out.println();
                     }
+                    break;
                 }
                 case 5: {
                     audit("Ascultare un elev la intamplare");
@@ -101,6 +109,7 @@ public class Meniu implements Audit{
 
                     elevi[elevRand].ascultare();
                     profesori[profRand].ascultare();
+                    break;
                 }
                 case 6: {
                     audit("Test surpriza unei clase");
@@ -110,9 +119,10 @@ public class Meniu implements Audit{
                     int comanda2 = scanner.nextInt();
 
                     System.out.println("Introduceti litera specifica clasei : A , B , C ");
-                    char litera = (char) scanner.nextInt();
+                    char litera = scanner.next().charAt(0);
 
                     Servisiu.testSurpriza(comanda2, litera, elevi, profesori);
+                    break;
                 }
                 case 7: {
                     audit("Simulare clasa a 12-a");
@@ -122,16 +132,14 @@ public class Meniu implements Audit{
                     for (Elev elev : elevi) {
                         elev.simulare(elev, romana, mate);
                     }
-
-                    //                double medieMate=Double.parseDouble(mate.getMedie());
-                    //                double medieRomana=Double.parseDouble(romana.getMedie());
+                    break;
                 }
                 case 8: {
                     audit("Sedinta cu parintii");
 
                     System.out.println("Introduceti numarul si litera clasei :");
                     int comanda3 = scanner.nextInt();
-                    int comanda3litera = (char) scanner.nextInt();
+                    char comanda3litera = scanner.next().charAt(0);
                     System.out.println("Se va desfasura o sedinta cu parintii clasei a "+ comanda3 + comanda3litera);
                     int aux=0;
                     for (int i=0; i< diriginti.length;i++)
@@ -139,10 +147,16 @@ public class Meniu implements Audit{
                         if (comanda3==diriginti[i].getClasa() && comanda3litera==diriginti[i].getLiteraClasa())
                             aux=i;
                     }
-                    diriginti[aux].sedinta(comanda3, (char) comanda3litera);
+                    diriginti[aux].sedinta(comanda3, comanda3litera);
+                    break;
+                }
+                case 9: {
+                    audit("Iesire din aplicatie");
+                    System.exit(0);
+                    break;
                 }
             }
-        System.out.println("Doriti sa va intoarceti la ecranul principal ?");
+        System.out.println("Mai doriti sa executati alta comanda?");
         System.out.println("1.Da        2.Nu (Iesire) ");
         int reset = scanner.nextInt();
         if (reset == 1)

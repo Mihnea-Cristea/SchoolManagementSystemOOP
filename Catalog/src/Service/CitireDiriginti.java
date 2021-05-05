@@ -1,4 +1,5 @@
 package Service;
+
 import Persoane.Diriginte;
 
 import java.io.File;
@@ -17,14 +18,13 @@ public class CitireDiriginti {
 
     public void citire(String path, Diriginte[] diriginti, int n) {
         try {
-            Scanner in = new Scanner(new File("C:\\Users\\Baciu\\Desktop\\Facultate\\Sem2\\Java\\ScoalaPrivata\\Catalog\\src\\Fisiere\\Diriginti.csv"));
+            Scanner in = new Scanner(new File(path));
             String linie;
-            in.nextLine();
             for (int i = 0;i<n;i++)
             {
                 linie=in.nextLine();
                 String[] splitter = linie.split(", ");
-                diriginti[i]= new Diriginte(splitter[0],Integer.parseInt(splitter[1]),splitter[2],Integer.parseInt(splitter[3]),Integer.parseInt(splitter[4]), (char) Character.toUpperCase(Integer.parseInt(splitter[5])));
+                diriginti[i]= new Diriginte(splitter[0],Integer.parseInt(splitter[1]),splitter[2],Integer.parseInt(splitter[3]),Integer.parseInt(splitter[4]), splitter[5].charAt(0));
             }
         } catch (FileNotFoundException e){
             e.printStackTrace();

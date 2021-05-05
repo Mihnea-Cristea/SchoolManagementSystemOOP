@@ -11,7 +11,7 @@ public interface Audit {
         Calendar calendar = Calendar.getInstance();
         try{
 
-            FileWriter fileWriter = new FileWriter("C:\\Users\\Baciu\\Desktop\\Facultate\\Sem2\\Java\\ScoalaPrivata\\Catalog\\src\\Fisiere\\Audit.csv",true);
+            FileWriter fileWriter = new FileWriter("fisiere\\Audit.csv",true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.write(log + ", "+dateFormat.format(calendar.getTime())+"\n");
             bufferedWriter.flush();
